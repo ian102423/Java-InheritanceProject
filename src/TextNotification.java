@@ -7,6 +7,15 @@ public class TextNotification extends Notification{
         super(subject, body);
     }
 
+    public String getRecipient() {
+        return recipient;
+    }
+
+    public String getSmsProvider() {
+        return smsProvider;
+    }
+
+    @Override
     public void transport(){
         getSubject();
         getBody();
