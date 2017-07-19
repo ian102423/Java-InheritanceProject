@@ -25,5 +25,8 @@ public class Notification {
         return body;
     }
 
-    //TODO: transport
+    //TODO: transport ::: method is to be overridden by a subclass
+    public void transport() throws NoTransportException{
+
+    }
 }
