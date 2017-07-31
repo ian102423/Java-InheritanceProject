@@ -1,9 +1,7 @@
-import javax.xml.soap.Text;
-
 public class Main {
     public static void main(String[] args) {
 
-        Notification noti = new Notification("x","y");
+        Notification noti = new Notification("x", "y");
         EmailNotification eNoti = new EmailNotification("x", "y");
         TextNotification tNoti = new TextNotification("x", "y");
 
