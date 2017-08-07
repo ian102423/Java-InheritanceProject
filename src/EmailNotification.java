@@ -5,9 +5,10 @@ public class EmailNotification extends Notification {
     private String recipient;
     private String smtpProvider;
 
-    public EmailNotification(String subject, String body) {
+    public EmailNotification(String subject, String body, String recipient, String smtpProvider) {
         super(subject, body);
-
+        this.recipient = recipient;
+        this.smtpProvider = smtpProvider;
     }
 
     @Override
@@ -36,7 +37,7 @@ public class EmailNotification extends Notification {
         return smtpProvider;
     }
 
-    //TODO: In EmailNotification override the method
+    // In EmailNotification override the method
     public void printSome() {
         System.out.println("Hello, This is protected method that's :::NOT::: from ParentClass but called out from ChildClass ^~^");
     }
@@ -49,6 +50,6 @@ public class EmailNotification extends Notification {
 
     @Override
     public Object clone() throws CloneNotSupportedException {
-        return new EmailNotification(getSubject(), getBody());
+        return new EmailNotification(getSubject(), getBody(), getRecipient(), getSmtpProvider());
     };
 }

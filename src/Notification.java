@@ -1,20 +1,20 @@
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class Notification {
 
     private LocalDateTime createdAt;
     private String subject;
     private String body;
-    protected String status;//TODO: protected variable
+    protected String status;// protected variable
 
     public Notification(String subject, String body) {
         createdAt = LocalDateTime.now();
         this.subject = subject;
         this.body = body;
+        this.status = "Waiting...";
     }
 
-    //TODO: method to Notification that prints out some text
+    // method to Notification that prints out some text
     protected void printSome(){
         System.out.println("Hello, This is protected method that's from ParentClass but will called out from ChildClass ಥ_ಥ");
     }
@@ -31,12 +31,12 @@ public class Notification {
         return body;
     }
 
-    //TODO: transport ::: method is to be overridden by a subclass
+    // transport ::: method is to be overridden by a subclass
     public void transport() throws NoTransportException{
 
     }
 
-    //TODO: public method that prints out (System.out.println) the protected variable
+    // public method that prints out (System.out.println) the protected variable
     public void showStatus(){
         System.out.println(status);
     }
