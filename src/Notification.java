@@ -1,11 +1,11 @@
 import java.time.LocalDateTime;
 
-public class Notification {
+public abstract class Notification {
 
     private LocalDateTime createdAt;
     private String subject;
     private String body;
-    protected String status;// protected variable
+    protected String status;
 
     public Notification(String subject, String body) {
         createdAt = LocalDateTime.now();
@@ -14,7 +14,6 @@ public class Notification {
         this.status = "Waiting...";
     }
 
-    // method to Notification that prints out some text
     protected void printSome(){
         System.out.println("Hello, This is protected method that's from ParentClass but will called out from ChildClass ಥ_ಥ");
     }
@@ -32,9 +31,7 @@ public class Notification {
     }
 
     // transport ::: method is to be overridden by a subclass
-    public void transport() throws NoTransportException{
-
-    }
+    public abstract void transport() throws NoTransportException;
 
     // public method that prints out (System.out.println) the protected variable
     public void showStatus(){

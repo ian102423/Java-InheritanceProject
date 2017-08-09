@@ -39,7 +39,7 @@ public class EmailNotification extends Notification {
 
     // In EmailNotification override the method
     public void printSome() {
-        System.out.println("Hello, This is protected method that's :::NOT::: from ParentClass but called out from ChildClass ^~^");
+        System.out.println("Hello, This is not protected method that's :::NOT::: from ParentClass but called out from ChildClass ^~^");
     }
 
     @Override
